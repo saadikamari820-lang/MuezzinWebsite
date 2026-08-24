@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المؤذن | تطبيق إسلامي</title>
+
+<meta name="description"
+content="المؤذن - تطبيق إسلامي لأوقات الصلاة والأذان والقبلة والأذكار">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5faf8;
+color:#173b32;
+line-height:1.8;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#075e54;
+color:white;
+padding:15px 20px;
+box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+
+.nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:25px;
+font-weight:bold;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+margin-right:20px;
+}
+
+.hero{
+min-height:620px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 20px;
+
+background:
+radial-gradient(circle at top,#d9f7ed,transparent 55%),
+linear-gradient(135deg,#eefbf7,#fff);
+}
+
+.hero-content{
+max-width:800px;
+}
+
+.mosque{
+font-size:80px;
+margin-bottom:15px;
+}
+
+.hero h1{
+font-size:52px;
+color:#075e54;
+margin-bottom:10px;
+}
+
+.hero h2{
+font-size:24px;
+color:#159477;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+color:#526761;
+max-width:650px;
+margin:auto;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+margin:7px;
+border-radius:15px;
+text-decoration:none;
+font-weight:bold;
+font-size:17px;
+transition:.3s;
+}
+
+.btn-primary{
+background:#075e54;
+color:white;
+box-shadow:0 8px 25px rgba(7,94,84,.25);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+background:#064c44;
+}
+
+.btn-secondary{
+background:white;
+color:#075e54;
+border:2px solid #075e54;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:70px 20px;
+}
+
+.title{
+text-align:center;
+font-size:34px;
+color:#075e54;
+margin-bottom:12px;
+}
+
+.subtitle{
+text-align:center;
+color:#647a73;
+margin-bottom:40px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:30px 20px;
+border-radius:22px;
+text-align:center;
+box-shadow:0 8px 30px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.icon{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.card h3{
+color:#075e54;
+margin-bottom:8px;
+}
+
+.card p{
+color:#60736d;
+}
+
+.about{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+.about p{
+color:#526761;
+margin-bottom:15px;
+font-size:17px;
+}
+
+/* قسم التحميل */
+
+.download-section{
+text-align:center;
+background:linear-gradient(135deg,#075e54,#159477);
+color:white;
+border-radius:30px;
+margin:40px auto;
+}
+
+.download-section .title{
+color:white;
+}
+
+.download-section p{
+margin-bottom:25px;
+}
+
+.download-button{
+display:inline-block;
+background:white;
+color:#075e54;
+padding:16px 35px;
+border-radius:15px;
+text-decoration:none;
+font-size:19px;
+font-weight:bold;
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+transition:.3s;
+}
+
+.download-button:hover{
+transform:translateY(-4px);
+}
+
+/* الأسئلة */
+
+.faq{
+background:white;
+padding:25px;
+margin-bottom:15px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.faq h3{
+color:#075e54;
+margin-bottom:8px;
+}
+
+.faq p{
+color:#60736d;
+}
+
+.faq a{
+color:#075e54;
+font-weight:bold;
+}
+
+/* الفوتر */
+
+footer{
+background:#073b35;
+color:white;
+text-align:center;
+padding:35px 20px;
+margin-top:40px;
+}
+
+footer p{
+margin-bottom:10px;
+}
+
+footer a{
+color:#9ee8d5;
+text-decoration:none;
+}
+
+@media(max-width:600px){
+
+.nav a{
+display:none;
+}
+
+.hero{
+min-height:580px;
+padding:50px 15px;
+}
+
+.mosque{
+font-size:65px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero h2{
+font-size:21px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:50px 15px;
+}
+
+.title{
+font-size:29px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+🕌 المؤذن
+</div>
+
+<div>
+
+<a href="#features">المميزات</a>
+<a href="#about">عن التطبيق</a>
+<a href="#download">التحميل</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- الرئيسية -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<div class="mosque">
+🕌
+</div>
+
+<h1>
+المؤذن
+</h1>
+
+<h2>
+رفيقك اليومي للصلاة والعبادة
+</h2>
+
+<p>
+تطبيق إسلامي يساعدك على متابعة أوقات الصلاة
+والأذان واتجاه القبلة والأذكار بسهولة.
+</p>
+
+<div class="buttons">
+
+<!-- زر التحميل الرئيسي -->
+
+<a
+class="btn btn-primary"
+href="WallpaperPro-debug.apk"
+download="WallpaperPro-debug.apk">
+
+📱 تحميل التطبيق
+
+</a>
+
+<a
+class="btn btn-secondary"
+href="#features">
+
+✨ اكتشف المميزات
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- المميزات -->
+
+<section id="features">
+
+<h2 class="title">
+✨ مميزات المؤذن
+</h2>
+
+<p class="subtitle">
+كل ما تحتاجه في تطبيق إسلامي واحد
+</p>
+
+<div class="features">
+
+<div class="card">
+
+<div class="icon">🕐</div>
+
+<h3>
+أوقات الصلاة
+</h3>
+
+<p>
+معرفة أوقات الصلوات اليومية بسهولة.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔊</div>
+
+<h3>
+الأذان
+</h3>
+
+<p>
+تنبيهات لمواعيد الصلاة.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🧭</div>
+
+<h3>
+القبلة
+</h3>
+
+<p>
+معرفة اتجاه القبلة بسهولة.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📿</div>
+
+<h3>
+الأذكار
+</h3>
+
+<p>
+الأذكار اليومية في مكان واحد.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌙</div>
+
+<h3>
+تصميم مريح
+</h3>
+
+<p>
+واجهة بسيطة وسهلة الاستخدام.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔒</div>
+
+<h3>
+الخصوصية
+</h3>
+
+<p>
+نحترم خصوصية المستخدم.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- عن التطبيق -->
+
+<section id="about">
+
+<h2 class="title">
+🕌 عن تطبيق المؤذن
+</h2>
+
+<p class="subtitle">
+تطبيق إسلامي نعمل على تطويره باستمرار
+</p>
+
+<div class="about">
+
+<p>
+المؤذن هو تطبيق إسلامي يهدف إلى مساعدة
+المسلمين على تنظيم عبادتهم اليومية
+ومتابعة أوقات الصلاة بسهولة.
+</p>
+
+<p>
+نسعى إلى إضافة المزيد من الأدوات الإسلامية
+المفيدة في الإصدارات القادمة.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- التحميل -->
+
+<section id="download" class="download-section">
+
+<h2 class="title">
+📱 تحميل التطبيق
+</h2>
+
+<p>
+اضغط على الزر لتحميل ملف APK.
+</p>
+
+<a
+class="download-button"
+href="WallpaperPro-debug.apk"
+download="WallpaperPro-debug.apk">
+
+📲 تحميل APK
+
+</a>
+
+</section>
+
+
+<!-- الأسئلة -->
+
+<section id="faq">
+
+<h2 class="title">
+❓ الأسئلة الشائعة
+</h2>
+
+<p class="subtitle">
+معلومات عن التطبيق
+</p>
+
+<div class="faq">
+
+<h3>
+هل التطبيق مجاني؟
+</h3>
+
+<p>
+نسعى إلى توفير نسخة مجانية من التطبيق.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>
+كيف أحصل على التطبيق؟
+</h3>
+
+<p>
+اضغط على زر تحميل APK الموجود في الموقع.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>
+سياسة الخصوصية
+</h3>
+
+<p>
+يمكنك قراءة سياسة الخصوصية الخاصة بالتطبيق.
+</p>
+
+<br>
+
+<a href="privacy.html">
+🔒 قراءة سياسة الخصوصية
+</a>
+
+</div>
+
+</section>
+
+
+<!-- الفوتر -->
+
+<footer>
+
+<p>
+🕌 المؤذن
+</p>
+
+<p>
+تطبيق إسلامي لمساعدتك في تنظيم عبادتك اليومية
+</p>
+
+<p>
+© 2026 المؤذن - جميع الحقوق محفوظة
+</p>
+
+<p>
+
+<a href="privacy.html">
+سياسة الخصوصية
+</a>
+
+</p>
+
+</footer>
+
+</body>
+
+  </html>
